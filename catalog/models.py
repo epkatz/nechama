@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -7,7 +8,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     cover = models.URLField()
     tag_list = models.ManyToManyField('Tag', through='BookTag')
-    #MetaData
+    # MetaData
     created_datetime = models.DateTimeField(auto_now_add=True)
     deleted_datetime = models.DateTimeField(null=True, blank=True)
 
@@ -22,7 +23,7 @@ class Tag(models.Model):
 class BookTag(models.Model):
     Book = models.ForeignKey(Book)
     Tag = models.ForeignKey(Tag)
-    #Metadata
+    # Metadata
     created_datetime = models.DateTimeField(auto_now_add=True)
     deleted_datetime = models.DateTimeField(null=True, blank=True)
 
@@ -41,3 +42,14 @@ class BookCopy(models.Model):
 
     def __str__(self):
         return "%s located at %s in %s" % (self.Book.title, self.Location.name, self.Location.school)
+
+
+class Checkout(models.Model):
+    BookCopy = models.ForeignKey(BookCopy)
+    Person = models.OneToOneField(User)
+    Checked_Out = models.DateTimeField(null=True, blank=True)
+    Checked_In = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return "%s was checked out by %s at %s and checked back in at %s" % (
+            self.BookCopy, self.Person, self.Checked_Out, self.Checked_In)
