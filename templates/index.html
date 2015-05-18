@@ -34,6 +34,7 @@
 
         <div class="row">
             <div class="col-lg-12">
+            {% if books %}
                 <table class="table">
                     <thead>
                         <tr>
@@ -56,6 +57,7 @@
                         {%  endfor %}
                     </tbody>
                 </table>
+            {% endif %}
             </div>
 
         </div>

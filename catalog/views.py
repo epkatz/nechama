@@ -6,6 +6,12 @@ from models import Book, BookCopy
 
 
 def index(request):
+    form = ISBNForm()
+    context = {'form': form}
+    return render(request, 'index.html', context)
+
+
+def view(request):
     books = BookCopy.objects.all()
     form = ISBNForm()
     context = {'form': form,
