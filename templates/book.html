@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <title>nechama education</title>
 
-{#    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>#}
-{#    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>#}
-{##}
-{#    <!-- Latest compiled and minified CSS -->#}
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">#}
-{#    <!-- Optional theme -->#}
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">#}
-{#    <!-- Latest compiled and minified JavaScript -->#}
-{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>#}
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    {##}
+    {#    <!-- Latest compiled and minified CSS -->#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    {#    <!-- Optional theme -->#}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    {#    <!-- Latest compiled and minified JavaScript -->#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-
+    <script type="application/javascript">
+        function readURL(self) {
+            console.log('changing');
+            $('#cover_img').attr('src', self.value);
+        }
+        ;
+    </script>
 
 
 </head>
 <body>
 
-    <!-- Page Content -->
-    <div class="container-fluid">
+<!-- Page Content -->
+<div class="container-fluid">
 
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>Test Test</h1>
-            </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1>Confirm Book Details</h1>
         </div>
-        <!-- /.row -->
+    </div>
+    <!-- /.row -->
 
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ book.get_book_cover.large }}"/>
-            </div>
-
+    <div class="row">
+        <div class="col-lg-12">
+            {% include 'book_save.html' %}
         </div>
 
     </div>
-    <!-- /.container -->
+
+</div>
+<!-- /.container -->
 
 </body>
 </html>

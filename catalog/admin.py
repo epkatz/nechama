@@ -1,3 +1,9 @@
 from django.contrib import admin
+from catalog.models import Book, Tag, BookTag, Location, BookCopy
 
-# Register your models here.
+admin.site.register(Book)
+admin.site.register(Tag)
+admin.site.register(BookTag)
+admin.site.register(Location)
+admin.site.register(BookCopy)
+

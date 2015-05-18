@@ -1,0 +1,6 @@
+<form action="/save/" method="post">
+    {{ form }}
+    <img src="{{ cover }}" class="img-thumbnail" id="cover_img"/>
+    {% csrf_token %}
+    <input type="submit" value="Save book" class="btn-primary">
+</form>
