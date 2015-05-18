@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2660390300">
+    <data-source source="LOCAL" name="Django default" uuid="338d80cb-e085-4880-a8b8-1c40165e21c3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:nechama</jdbc-url>
+      <user-name>epkatz</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
